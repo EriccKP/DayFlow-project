@@ -25,24 +25,72 @@
   grid-template-areas: "sidebar"
                        "content";
   width: 100vw; /* unnecessary, but let's keep things consistent */
-  height: 100vh;
+  height: 87vh;
 }
+
+
 
 @media screen and (min-width: 850px) {
   .wrapper {
-    grid-template-columns: 200px 5fr;
+    grid-template-columns: 230px 5fr;
     grid-template-rows: 1fr;
     grid-template-areas: "sidebar content";
   }
 }
 
+/* NAVBAR */
 
+.topnav {
+  overflow: hidden;
+  background-color: #1f4edb;
+}
+
+.topnav a {
+  float: left;
+  color: #91c5fa;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.topnav a:hover {
+  background-color: #4f9ff0;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #1f4edb;
+  color: white;
+  font-size: 19px;
+}
+
+.topnav-right {
+  float: right;
+}
+
+.topnav-centered a {
+  float: none;
+  position: absolute;
+  top: 3%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+
+.topnav-centered2 a {
+  float: none;
+  position: absolute;
+  top: 3%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+}
 
 /* SIDEBAR */
 
 main {
   grid-area: content;
-  padding: 48px;
+  padding: 20px;
 }
 
 sidebar {
@@ -53,6 +101,34 @@ sidebar {
   grid-template-areas: "logo menu avatar"
                        "copyright menu avatar";
 }
+
+/* NEW EVENT POGA */
+
+.button {
+  border: none;
+  border-radius: 50px;
+  color: white;
+  padding: 11px 35px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {background-color: #1f4edb;}
+
+.button-centered {
+  float: none;
+  position: absolute;
+  top: 15%;
+  left: 6%;
+  transform: translate(-50%, -50%);
+}
+
+/* sitas hujnas bija prieks profila bildes un varda, kas bija sidebaraa, ja vajadzes kko citu varesim ielikt vinās */
 .logo {
   display: flex;
   align-items: center;
@@ -84,6 +160,7 @@ sidebar {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  top:50%;
 }
 .logo {
   grid-area: logo;
@@ -99,7 +176,7 @@ sidebar {
                          "menu"
                          "copyright";
     grid-template-columns: 1fr;
-    grid-template-rows: 50px auto 1fr 50px;
+    grid-template-rows: 150px auto 1fr 50px;
   }
   
   .menu {
@@ -125,13 +202,26 @@ sidebar {
 
 
 /* MAIN */
-
-.toolbar{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
+.arrow {
+  display: inline-block;
+  padding: 3px;
 }
+.down {
+  border-bottom: 3px solid rgba(0, 0, 0, 0.3);
+  border-right: 3px solid rgba(0, 0, 0, 0.3);
+  transform: translateY(-25%) rotate(45deg);
+}
+.left {
+  border-bottom: 3px solid rgba(0, 0, 0, 0.3);
+  border-left: 3px solid rgba(0, 0, 0, 0.3);
+  transform: translateX(25%) rotate(45deg);
+}
+.right {
+  border-right: 3px solid rgba(0, 0, 0, 0.3);
+  border-top: 3px solid rgba(0, 0, 0, 0.3);
+  transform: translateX(-25%) rotate(45deg);
+}
+
 .calendar{}
 
 .calendar__week,
@@ -140,7 +230,7 @@ sidebar {
   grid-template-columns: repeat(7, 1fr);  
 }
 .calendar__week {
-  grid-auto-rows: 100px;
+  grid-auto-rows: 140px;
   text-align: right;
 }
 
@@ -153,9 +243,6 @@ sidebar {
 .calendar__day {
   padding: 16px;
 }
-
-
-
 
 /* COSMETIC STYLING */
 
@@ -231,9 +318,11 @@ main {
 }
 
 .calendar__header > div {
-  text-transform: uppercase;
   font-size: 0.8em;
+  padding: 18px 0;
   font-weight: bold;
+  border-right: 1px solid #e1e1e1;
+  border-top: 1px solid #e1e1e1;
 }
 
 .calendar__day {
@@ -275,73 +364,105 @@ main {
   font-weight: 500;
   box-shadow: 1px 2px 30px -5px var(--red);
 }
+
+.btn {
+  right: 50%;
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  margin:0 auto;
+  display:block;
+}
+.btn2 {
+  right: 50%;
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  margin:0 auto;
+  display:block;
+  float:right;
+}
+
+.btn:hover {
+  background: #eee;
+}
+.btn2:hover {
+  background: #eee;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: left;
+  padding: 5px;
+  background-color: #b1becc;
+  color: black;
+}
+.button-right {
+  float: right;
+}
+.button:hover {
+  background: #eee;
+}
+.button2 {background-color: #1f4edb00;
+color: #363636;}
+.button3 {background-color: #1f4edb00;
+color: #363636;}
+.button4 {background-color: #1f4edb00;
+color: #363636;}
+
+.topnav-centered a {
+  float: none;
+  position: absolute;
+  top: 3%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+
   </style>
 
-  
 </head>
 
 <body>
+  <div class="topnav">
+    <a href="#home"><img src="F:\123.png"></a>
+    <div class="topnav-centered">
+      <a class="active" href="#calendars">Calendar</a>
+    </div>
+    <div class="topnav-centered2">
+      <a href="#scrum">Scrum board</a>
+    </div>
+    <div class="topnav-right">
+      <a href="#profile">Profile</a>
+    </div>
+  </div>
   <div class="wrapper">
   <main>
-    <div class="toolbar">
-      <div class="toggle">
-        <div class="toggle__option">week</div>
-        <div class="toggle__option toggle__option--selected">month</div>
-      </div>
-      <div class="current-month">June 2016</div>
-      <div class="search-input">
-        <input type="text" value="What are you looking for?">
-        <i class="fa fa-search"></i>
-      </div>
-    </div>
     <div class="calendar">
-      <div class="calendar__header">
-        <div>mon</div>
-        <div>tue</div>
-        <div>wed</div>
-        <div>thu</div>
-        <div>fri</div>
-        <div>sat</div>
-        <div>sun</div>
+      <button class="btn2"><i class="arrow right"></i> </button>
+      <button class="btn2"><i class="arrow left"></i> </button>
+      <div class="current-month">
+        <button class="btn"> April 2022 <i class="arrow down"></i> </button>
       </div>
+      <div class="calendar__header"> 
+        <div>Monday</div>
+        <div>Tuesday</div>
+        <div>Wednesday</div>
+        <div>Thursday</div>
+        <div>Friday</div>
+        <div>Saturday</div> 
+        <div>Sunday</div>
+      </div> 
       <div class="calendar__week">
-        <div class="calendar__day day">1</div>
-        <div class="calendar__day day">2</div>
-        <div class="calendar__day day">3</div>
-        <div class="calendar__day day">4</div>
-        <div class="calendar__day day">5</div>
-        <div class="calendar__day day">6</div>
-        <div class="calendar__day day">7</div>
-      </div>
-      <div class="calendar__week">
-        <div class="calendar__day day">8</div>
-        <div class="calendar__day day">9</div>
-        <div class="calendar__day day">10</div>
-        <div class="calendar__day day">11</div>
-        <div class="calendar__day day">12</div>
-        <div class="calendar__day day">13</div>
-        <div class="calendar__day day">14</div>        
-      </div>
-      <div class="calendar__week">
-        <div class="calendar__day day">15</div>
-        <div class="calendar__day day">16</div>
-        <div class="calendar__day day">17</div>
-        <div class="calendar__day day">18</div>
-        <div class="calendar__day day">19</div>
-        <div class="calendar__day day">20</div>
-        <div class="calendar__day day">21</div>    
-      </div>
-      <div class="calendar__week">
-        <div class="calendar__day day">22</div>
-        <div class="calendar__day day">23</div>
-        <div class="calendar__day day">24</div>
-        <div class="calendar__day day">25</div>
-        <div class="calendar__day day">26</div> 
-        <div class="calendar__day day">27</div> 
-        <div class="calendar__day day">28</div> 
-      </div>
-      <div class="calendar__week">
-        <div class="calendar__day day">29</div>
+        <div class="calendar__day day">29
+          <button class="btn"></button>
+        </div>
         <div class="calendar__day day">30</div>
         <div class="calendar__day day">31</div>
         <div class="calendar__day day">1</div>
@@ -349,16 +470,55 @@ main {
         <div class="calendar__day day">3</div>
         <div class="calendar__day day">4</div>
       </div>
+      <div class="calendar__week">
+        <div class="calendar__day day">5</div>
+        <div class="calendar__day day">6</div>
+        <div class="calendar__day day">7</div>
+        <div class="calendar__day day">8</div>
+        <div class="calendar__day day">9</div>
+        <div class="calendar__day day">10</div>
+        <div class="calendar__day day">11</div>        
+      </div>
+      <div class="calendar__week">
+        <div class="calendar__day day">12</div>
+        <div class="calendar__day day">13</div>
+        <div class="calendar__day day">14</div>
+        <div class="calendar__day day">15</div>
+        <div class="calendar__day day">16</div>
+        <div class="calendar__day day">17</div>
+        <div class="calendar__day day">18</div>    
+      </div>
+      <div class="calendar__week">
+        <div class="calendar__day day">19</div>
+        <div class="calendar__day day">20</div>
+        <div class="calendar__day day">21</div>
+        <div class="calendar__day day">22</div>
+        <div class="calendar__day day">23</div> 
+        <div class="calendar__day day">24</div> 
+        <div class="calendar__day day">25</div> 
+      </div>
+      <div class="calendar__week">
+        <div class="calendar__day day">26</div>
+        <div class="calendar__day day">27</div>
+        <div class="calendar__day day">28</div>
+        <div class="calendar__day day">29</div>
+        <div class="calendar__day day">30</div>
+        <div class="calendar__day day">1</div>
+        <div class="calendar__day day">2</div>
+      </div>
     </div>
   </main>
   <sidebar>
-    <div class="logo">logo</div>
+    <div class="button-centered">
+      <button class="button button1">New event</button>
+    </div>
+    <!--<div class="logo">logo</div>
     <div class="avatar">
       <div class="avatar__img">
         <img src="https://picsum.photos/70" alt="avatar">
       </div>
       <div class="avatar__name">John Smith</div>
-    </div>
+    </div>-->
     <nav class="menu">
       <a class="menu__item" href="#">
         <i class="menu__icon fa fa-home"></i>
@@ -389,9 +549,17 @@ main {
         <span class="menu__text">measurements</span>
       </a>
     </nav>
-    <div class="copyright">copyright &copy; 2018</div>
+    <!--<div class="copyright">copyright &copy; 2018</div>-->
   </sidebar>
 </div>
+<footer>
+  <div class="button-right">
+    <button class="button button2">Profile</button>
+    <button class="button button3">Scrum board</button>
+    <button class="button button4">Calendar</button>
+  </div>
+  <p>© 2022 All Rights Reserved</p>
+</footer>
   
 </body>
 
