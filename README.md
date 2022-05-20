@@ -1,4 +1,9 @@
+### Pre-requisites
 
+Nodejs
+npm
+
+### `npm install react-scripts --save`
 ### `npm start`
 
 Runs the app in the development mode.\
