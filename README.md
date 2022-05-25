@@ -3,7 +3,8 @@
 Nodejs
 npm
 
-### `npm install react-scripts --save`
+### `npm install react-scripts --force`
+### 'npm install reactjs-popup --force'
 ### `npm start`
 
 Runs the app in the development mode.\
