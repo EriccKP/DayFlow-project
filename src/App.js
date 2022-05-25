@@ -16,6 +16,8 @@ import "tui-time-picker/dist/tui-time-picker.css";
 const start = new Date();
 const end = new Date(new Date().setMinutes(start.getMinutes() + 30));
 
+
+
 function App() {
 
   const cal = useRef(null);
@@ -39,11 +41,10 @@ function App() {
       category: scheduleData.isAllDay ? "allday" : "time",
       dueDateClass: "",
       location: scheduleData.location,
-      raw: {
-        class: scheduleData.raw["class"]
-      },
       state: scheduleData.state
     };
+
+  
 
     cal.current.calendarInst.createSchedules([schedule]);
   }, []);
@@ -221,4 +222,5 @@ function App() {
 }
 
 export default App;
+
 
