@@ -44,7 +44,7 @@ function App() {
       state: scheduleData.state
     };
 
-  
+
 
     cal.current.calendarInst.createSchedules([schedule]);
   }, []);
@@ -108,7 +108,7 @@ function App() {
       return _getTimeTemplate(schedule, false);
     }
   };
-  
+
 
   const [user,setUser] = useState("");
   const [email, setEmail] = useState("");
@@ -172,11 +172,44 @@ function App() {
     fire.auth().onAuthStateChanged(user => {
       if (user) {
         clearInputs();
-        setUser(user); 
+        setUser(user);
       } else {
         setUser("");
       }
     });
+  };
+
+  const handleEmailUpdate = () => {
+    clearErrors();
+    fire
+      .auth()
+      .currentUser
+      .updateEmail(email)
+      .catch( err => {
+        switch(err.code){
+          case "auth/email-already-in-use":
+          case "auth/invalid-email":
+            setEmailError(err.message);
+            break;
+        }
+      });
+    alert("Email updated successfully!")
+  };
+
+  const handlePasswordUpdate = () => {
+    clearErrors();
+    fire
+      .auth()
+      .currentUser
+      .updatePassword(password)
+      .catch( err => {
+        switch(err.code){
+          case "auth/weak-password":
+            setPasswordError(err.message);
+            break;
+        }
+      });
+    alert("Password updated successfully!")
   };
 
   useEffect( () => {
@@ -189,7 +222,17 @@ function App() {
     <div className="App">
         {user ? (
           <div>
-          <Hero handleLogout={handleLogout}/>
+          <Hero
+            handleLogout={handleLogout}
+            handleEmailUpdate={handleEmailUpdate}
+            handlePasswordUpdate={handlePasswordUpdate}
+            setEmail={setEmail}
+            email={email}
+            emailError={emailError}
+            password={password}
+            setPassword={setPassword}
+            passwordError={passwordError}
+          />
           <TUICalendar
             ref={cal}
             height="700px"
@@ -204,11 +247,11 @@ function App() {
           />
           </div>
         ) : (
-          <Login 
-            email={email} 
-            setEmail={setEmail} 
-            password={password} 
-            setPassword={setPassword} 
+          <Login
+            email={email}
+            setEmail={setEmail}
+            password={password}
+            setPassword={setPassword}
             handleLogin={handleLogin}
             handleSignup={handleSignup}
             hasAccount={hasAccount}
@@ -222,5 +265,3 @@ function App() {
 }
 
 export default App;
-
-
