@@ -1,5 +1,7 @@
 
- import firebase from 'firebase';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import {query, onSnapshot, getFirestore,addDoc,collection} from 'firebase/firestore';
 
 
  // Your web app's Firebase configuration
@@ -14,5 +16,13 @@
 
  // Initialize Firebase
  const fire = firebase.initializeApp(firebaseConfig);
+ const db = getFirestore(fire);
 
-export default fire;
+export {
+  fire,
+  db,
+  addDoc,
+  collection,
+  query,
+  onSnapshot
+}
