@@ -233,10 +233,11 @@ function App() {
             setPassword={setPassword}
             passwordError={passwordError}
           />
+          <div id="calendar">
           <TUICalendar
             ref={cal}
             view="month"
-            height="0px"
+            height="600px"
             useCreationPopup={true}
             useDetailPopup={true}
             template={templates}
@@ -245,6 +246,7 @@ function App() {
             onBeforeDeleteSchedule={onBeforeDeleteSchedule}
             onBeforeUpdateSchedule={onBeforeUpdateSchedule}
             />
+          </div>
           </div>
         ) : (
           <Login

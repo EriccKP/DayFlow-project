@@ -5,6 +5,7 @@
   font-family: "Nunito", sans-serif;
 }
 
+
 button {
   border: none;
   outline: none;
@@ -122,6 +123,7 @@ button {
 }
 
 .hero {
+
   background: white;
 }
 
@@ -139,8 +141,6 @@ button {
 }
 
 .hero nav button {
-  width: 86px;
-  padding: 8px 0;
   background: #3a2b58;
 }
 
@@ -198,6 +198,7 @@ button {
   background: #4245e6;
   cursor: pointer;
 }
-.tui-full-calendar-floating-layer{
-  position: relative !important;
+
+.tui-calendar-react-root{
+  height: 100% !important;
 }
