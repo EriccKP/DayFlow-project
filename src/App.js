@@ -235,8 +235,8 @@ function App() {
           />
           <TUICalendar
             ref={cal}
-            height="700px"
-            view="week"
+            view="month"
+            height="0px"
             useCreationPopup={true}
             useDetailPopup={true}
             template={templates}
@@ -244,7 +244,7 @@ function App() {
             onBeforeCreateSchedule={onBeforeCreateSchedule}
             onBeforeDeleteSchedule={onBeforeDeleteSchedule}
             onBeforeUpdateSchedule={onBeforeUpdateSchedule}
-          />
+            />
           </div>
         ) : (
           <Login

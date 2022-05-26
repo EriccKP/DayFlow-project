@@ -122,8 +122,6 @@ button {
 }
 
 .hero {
-  width: 100%;
-  min-height: 100vh;
   background: white;
 }
 
@@ -152,7 +150,7 @@ button {
   padding: 0 200px 100px;
   border-radius: 18px;
   margin: 100px 10px 10px;
-  position: relative;
+  background: white;
 }
 .header {
   width: 100%;
