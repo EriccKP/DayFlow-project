@@ -198,6 +198,6 @@ button {
   background: #4245e6;
   cursor: pointer;
 }
-.tui-full-calendar-floating-layer.tui-view-40{
+.tui-full-calendar-floating-layer{
   position: relative !important;
 }
