@@ -4,22 +4,25 @@ import logo from './logo_white.png';
 import profilePic from './profile_pic.jpg'
 
 
-const Hero = ({handleLogout, handleEmailUpdate, handlePasswordUpdate, setEmail, email, emailError, password, setPassword, passwordError}) => {
+const Hero = ({handleLogout, handleEmailUpdate, handlePasswordUpdate, setEmail, email, emailError, password, setPassword, passwordError, handleClick}) => {
     return (
         <section className='hero'>
             <div className="topNav">
               <img src={logo} width="200" align="left"/>
-                <a> Calendar </a>
-                <a> SCRUM </a>
+                <a onClick={handleClick}> Kanban </a>
+                <a onClick={handleClick}> Calendar </a>  
+              
+               
                 <Popup trigger={<a> Profile </a>} modal nested>
                   {close => (
-                    <div className="modal">
+                    <div className="modalprofile">
                       <div>
                         <button className="close" onClick={close}>
                           &times;
                         </button>
                       </div>
-                      <div className="header">
+                      
+                      <div className="headerprofile">
                         Profile
                       </div>
                       <div>
