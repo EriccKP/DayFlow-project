@@ -1,14 +1,10 @@
 ### Pre-requisites
 
-Nodejs
-npm
-
+### `Nodejs with npm package manager` https://nodejs.org/en/
 ### `npm install react-scripts --force`
-### 'npm install reactjs-popup --force'
-### `npm start`
+### `npm install reactjs-popup --force`
 
-Runs the app in the development mode.\
+### `npm start` to run the app
+
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
