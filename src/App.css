@@ -270,3 +270,54 @@ button {
   padding: 10px;
 }
 
+#lnb {
+  position: absolute;
+  width: 15%;
+  height: 650px;
+  border-right: 1px solid #d5d5d5;
+  padding: 12px 10px;
+  background: #fafafa;
+}
+
+.lnb-new-schedule {
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.lnb-new-schedule-btn {
+  height: 100%;
+  font-size: 14px;
+  background-color: #4245e6;
+  color: #ffffff;
+  border: 0;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.lnb-new-schedule-btn:hover {
+  height: 100%;
+  font-size: 14px;
+  background-color: #e55b15;
+  color: #ffffff;
+  border: 0;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.lnb-footer {
+  color: #999;
+  font-size: 11px;
+  position: absolute;
+  bottom: 12px;
+  padding-left: 16px;
+}
+
+#calendar {
+    position: relative;
+    display: block;
+    width: 85%;
+    float: right;
+    height: 80%;
+}

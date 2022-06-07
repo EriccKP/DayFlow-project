@@ -3,7 +3,7 @@ import './App.css';
 import Login from './Login'
 import {fire,db,addDoc,collection,query,onSnapshot} from './fire';
 import Hero from './Hero'
-
+import Sidebar from './Sidebar'
 
 import TUICalendar from "@toast-ui/react-calendar";
 import { ISchedule, ICalendarInfo } from "tui-calendar";
@@ -24,7 +24,7 @@ const end = new Date(new Date().setMinutes(start.getMinutes() + 30));
 
 function App() {
 
-  
+
   const [boards, setBoards] = useState(
     JSON.parse(localStorage.getItem("prac-kanban")) || []
   );
@@ -343,7 +343,7 @@ function App() {
     setIsShown(current => !current);
   };
   return (
-    
+
     <div className="App">
         {user ? (
           <div>
@@ -359,9 +359,9 @@ function App() {
             passwordError={passwordError}
             handleClick={handleClick}
           />
-          <div> 
-            <div style={{display: isShown ? 'block' : 'none'}}>
           <div>
+            <div style={{display: isShown ? 'block' : 'none'}}>
+          <div id="calendar">
             <TUICalendar
             ref={cal}
             view="month"
@@ -375,9 +375,15 @@ function App() {
             onBeforeUpdateSchedule={onBeforeUpdateSchedule}
             />
           </div>
+          <div >
+          <Sidebar id='lnb'
+            onClickSchedule={onClickSchedule}
+            onBeforeCreateSchedule={onBeforeCreateSchedule}
+            />
+          </div>
         </div>
         </div>
-      <div> 
+      <div>
         <div style={{display: !isShown ? 'block' : 'none'}}>
           <div className="app_boards_container">
         <div className="app_boards">
